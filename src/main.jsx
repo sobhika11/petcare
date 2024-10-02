@@ -1,4 +1,6 @@
+// Auto commit 5
 import React from 'react'
+// Auto commit 5
 import ReactDOM from 'react-dom/client'
 import App from './App'
 
