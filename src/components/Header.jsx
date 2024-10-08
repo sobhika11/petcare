@@ -1,3 +1,4 @@
+// Auto commit 32
 import React from 'react';
 
 import '../styles/navbar.css';
