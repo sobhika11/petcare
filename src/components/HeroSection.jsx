@@ -1,5 +1,22 @@
 // Auto commit 33
+
 import React from 'react';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -23,7 +40,23 @@ const HeroSection = () => {
 
 
 
+
+
+
+
+
+
+
+
   return (
+
+
+
+
+
+
+
+
 
 
 
@@ -39,7 +72,23 @@ const HeroSection = () => {
 
 
 
+
+
+
+
+
+
+
+
       <section className="sec">
+
+
+
+
+
+
+
+
 
 
 
@@ -55,7 +104,23 @@ const HeroSection = () => {
 
 
 
+
+
+
+
+
+
+
+
         </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -71,7 +136,23 @@ const HeroSection = () => {
 
 
 
+
+
+
+
+
+
+
+
           <p style={{ fontSize: '50px', color: 'black' }}>Your pet DESERVES<br /> to be Pampered!🐾</p>
+
+
+
+
+
+
+
+
 
 
 
@@ -87,7 +168,23 @@ const HeroSection = () => {
 
 
 
+
+
+
+
+
+
+
+
             <p id="miss">𝑨𝒕 𝒍𝒐𝒗𝒊𝒏𝒈 𝑷𝒆𝒕 𝒄𝒂𝒓𝒆 𝑷𝒂𝒓𝒕𝒏𝒆𝒓𝒔,𝒘𝒆 𝒖𝒏𝒅𝒆𝒓𝒔𝒕𝒂𝒏𝒅<br /> 𝒕𝒉𝒂𝒕 𝒕𝒉𝒆𝒚 𝒃𝒓𝒊𝒏𝒈 𝒋𝒐𝒚 𝒕𝒐 𝒚𝒐𝒖𝒓 𝒍𝒊𝒇𝒆,𝒐𝒖𝒓 𝒎𝒊𝒔𝒔𝒊𝒐𝒏 𝒊𝒔 𝒕𝒐 𝒎𝒂𝒌𝒆 𝒔𝒖𝒓𝒆<br /> 𝒕𝒉𝒂𝒕 𝒚𝒐𝒖𝒓 𝒇𝒖𝒓𝒓𝒚 𝒇𝒂𝒎𝒊𝒍𝒚 𝒎𝒆𝒎𝒃𝒆𝒓𝒔 𝒓𝒆𝒄𝒆𝒊𝒗𝒆 𝒕𝒉𝒆 𝒃𝒆𝒔𝒕 𝒄𝒂𝒓𝒆🤎</p>
+
+
+
+
+
+
+
+
 
 
 
@@ -103,6 +200,14 @@ const HeroSection = () => {
 
 
 
+
+
+
+
+
+
+
+
           <br />
 
 
@@ -111,7 +216,23 @@ const HeroSection = () => {
 
 
 
+
+
+
+
+
+
+
+
           <br />
+
+
+
+
+
+
+
+
 
 
 
@@ -127,7 +248,23 @@ const HeroSection = () => {
 
 
 
+
+
+
+
+
+
+
+
             href="login.html" 
+
+
+
+
+
+
+
+
 
 
 
@@ -143,7 +280,23 @@ const HeroSection = () => {
 
 
 
+
+
+
+
+
+
+
+
               textDecoration: 'none', 
+
+
+
+
+
+
+
+
 
 
 
@@ -159,7 +312,23 @@ const HeroSection = () => {
 
 
 
+
+
+
+
+
+
+
+
               backgroundColor: 'green', 
+
+
+
+
+
+
+
+
 
 
 
@@ -175,7 +344,23 @@ const HeroSection = () => {
 
 
 
+
+
+
+
+
+
+
+
               color: 'white', 
+
+
+
+
+
+
+
+
 
 
 
@@ -191,7 +376,23 @@ const HeroSection = () => {
 
 
 
+
+
+
+
+
+
+
+
               fontSize: '30px' 
+
+
+
+
+
+
+
+
 
 
 
@@ -207,7 +408,23 @@ const HeroSection = () => {
 
 
 
+
+
+
+
+
+
+
+
           >
+
+
+
+
+
+
+
+
 
 
 
@@ -223,7 +440,23 @@ const HeroSection = () => {
 
 
 
+
+
+
+
+
+
+
+
           </a>
+
+
+
+
+
+
+
+
 
 
 
@@ -239,7 +472,23 @@ const HeroSection = () => {
 
 
 
+
+
+
+
+
+
+
+
       </section>
+
+
+
+
+
+
+
+
 
 
 
@@ -255,7 +504,23 @@ const HeroSection = () => {
 
 
 
+
+
+
+
+
+
+
+
       <p>We Will Take Care Of your Beloved Cuties❤</p>
+
+
+
+
+
+
+
+
 
 
 
@@ -271,7 +536,23 @@ const HeroSection = () => {
 
 
 
+
+
+
+
+
+
+
+
   );
+
+
+
+
+
+
+
+
 
 
 
@@ -295,7 +576,39 @@ const HeroSection = () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export default HeroSection;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
