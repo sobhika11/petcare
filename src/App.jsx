@@ -6,7 +6,23 @@
 
 
 
+
+
+
+
+
+
+
+
 // Auto commit 14
+
+
+
+
+
+
+
+
 
 
 
@@ -16,8 +32,19 @@
 
 // Auto commit 50
 
+
+
 // Auto commit 57
+
 import React from 'react';
+
+
+
+
+
+
+
+
 
 
 
@@ -33,6 +60,14 @@ import Header from './components/Header';
 
 
 
+
+
+
+
+
+
+
+
 import HeroSection from './components/HeroSection';
 
 
@@ -41,7 +76,23 @@ import HeroSection from './components/HeroSection';
 
 
 
+
+
+
+
+
+
+
+
 import ImageGallery from './components/ImageGallery';
+
+
+
+
+
+
+
+
 
 
 
@@ -65,7 +116,31 @@ import '../main.css';
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function App() {
+
+
+
+
+
+
+
+
 
 
 
@@ -81,7 +156,23 @@ function App() {
 
 
 
+
+
+
+
+
+
+
+
     <div className="App">
+
+
+
+
+
+
+
+
 
 
 
@@ -97,7 +188,23 @@ function App() {
 
 
 
+
+
+
+
+
+
+
+
       <HeroSection />
+
+
+
+
+
+
+
+
 
 
 
@@ -113,6 +220,14 @@ function App() {
 
 
 
+
+
+
+
+
+
+
+
     </div>
 
 
@@ -121,7 +236,23 @@ function App() {
 
 
 
+
+
+
+
+
+
+
+
   );
+
+
+
+
+
+
+
+
 
 
 
@@ -145,7 +276,31 @@ function App() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export default App;
+
+
+
+
+
+
+
+
 
 
 
