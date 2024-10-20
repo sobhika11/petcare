@@ -2,11 +2,27 @@
 
 
 
+
+
+
+
 // Auto commit 51
+
+
 
 // Auto commit 60
 
+
+
 import React from 'react';
+
+
+
+
+
+
+
+
 
 
 
@@ -30,7 +46,31 @@ import '../styles/navbar.css';
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const Header = () => {
+
+
+
+
+
+
+
+
 
 
 
@@ -46,7 +86,23 @@ const Header = () => {
 
 
 
+
+
+
+
+
+
+
+
     <header>
+
+
+
+
+
+
+
+
 
 
 
@@ -70,7 +126,31 @@ const Header = () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <nav className="navbar">
+
+
+
+
+
+
+
+
 
 
 
@@ -86,7 +166,23 @@ const Header = () => {
 
 
 
+
+
+
+
+
+
+
+
           <li><a href="main.html">Home</a></li>
+
+
+
+
+
+
+
+
 
 
 
@@ -102,7 +198,23 @@ const Header = () => {
 
 
 
+
+
+
+
+
+
+
+
           <li><a href="d.html">Services</a></li>
+
+
+
+
+
+
+
+
 
 
 
@@ -118,7 +230,23 @@ const Header = () => {
 
 
 
+
+
+
+
+
+
+
+
         </ul>
+
+
+
+
+
+
+
+
 
 
 
@@ -134,6 +262,14 @@ const Header = () => {
 
 
 
+
+
+
+
+
+
+
+
     </header>
 
 
@@ -142,7 +278,23 @@ const Header = () => {
 
 
 
+
+
+
+
+
+
+
+
   );
+
+
+
+
+
+
+
+
 
 
 
@@ -166,7 +318,39 @@ const Header = () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export default Header;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
