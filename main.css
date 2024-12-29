@@ -17,7 +17,7 @@ body{
 }
 table{
     display:flex;
-    margin-left: 100px;
+    margin-left: 180px;
 }
 h2{
     text-align: center;
@@ -47,21 +47,29 @@ a{
 
 #dog
 {
-
+    
     width: 500px;
     height: 500px;
-    
-    background-image: url(Images/1433886.jpg);
+    /* background-image: url(Images/1433886.jpg); */
+    background-image: url(Images/serviclogo.jpeg);
     background-size: cover;
-    border-radius: 20px;  
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;   */
+    /* /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
 
 }
 p{
     font-size: 30px;
-    /* align-items: center;
-     */
      text-align: center;
+}
+#miss
+{
+    font-size: 20px;
+    color:black
+    border-radius: 20px;
+    padding: 10px;
+    width: 330px;
+    color: rgb(222, 101, 26);
+    font-family: sans-serif;
 }
 #cat
 {
