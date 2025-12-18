@@ -11,7 +11,7 @@ const userSchema=new mongoose.Schema(
             unique:true
         },
         phone_number:{
-            type:Number,
+            type:String,
             required:true
         },
         pets_name:{
@@ -19,4 +19,4 @@ const userSchema=new mongoose.Schema(
             required:false
         }
     });
-module.exports=mongoose.model('user',userSchema);
+module.exports=mongoose.model('User',userSchema);

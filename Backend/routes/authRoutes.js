@@ -17,14 +17,22 @@ router.post('/google',async (req,res)=>
     if(!user)
     {
         user=await User.create({
-            name: name,
-            email:email,
-            phone_number:0,
-            pets_name:''
+            name,
+            email,
+            phone_number:"",
+            pets_name:""
         });
     }
-    res.status(200).json({message: 'Login successful',name,email});
-    } 
+    res.status(200).json({
+    message: 'Login successful',
+    user: {
+        id: user._id,
+        name: user.name,
+        email: user.email
+    }
+});
+    
+} 
 
 catch(err){
     res.status(401).json({message:"Invalid google token"});
