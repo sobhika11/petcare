@@ -71,8 +71,8 @@ a{
     /* background-image: url(Images/1433886.jpg); */
     background-image: url(Images/serviclogo.jpeg);
     background-size: cover;
-    border-radius: 10px;   */
-    /* /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+    border-radius: 10px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
 
 }
 p{
@@ -82,7 +82,7 @@ p{
 #miss
 {
     font-size: 20px;
-    color:black
+    color:black;
     border-radius: 20px;
     padding: 10px;
     width: 330px;
