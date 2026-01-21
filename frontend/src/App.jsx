@@ -1,11 +1,11 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import AboutUs from "./AboutUs";
 import Services from "./Services";
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <header>
         <h2 style={{ marginRight: "-110px" }}>𝐏𝐞𝐭𝐂𝐚𝐫𝐞.𝐠𝐨 🐾</h2>
 
@@ -21,7 +21,7 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/services" element={<Services />} />
       </Routes>
-    </>
+    </BrowserRouter>
   );
 }
 
