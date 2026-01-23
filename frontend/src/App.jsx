@@ -8,7 +8,6 @@ function App() {
     <BrowserRouter>
       <header>
         <h2 style={{ marginRight: "-110px" }}>𝐏𝐞𝐭𝐂𝐚𝐫𝐞.𝐠𝐨 🐾</h2>
-
         <nav className="navbar">
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
