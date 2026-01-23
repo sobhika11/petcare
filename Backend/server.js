@@ -6,6 +6,13 @@ app.use(cors());
 app.get('/', (req, res) => {
   res.send('🎉 PetCare backend is up and running!');
 });
+
+// Simple booking endpoint for appointment form submissions
+app.post('/api/book', (req, res) => {
+  console.log('Received booking:', req.body);
+  res.status(200).json({ message: 'Booking received' });
+});
+
 require('./db');
 const authRoutes = require('./routes/authRoutes');
 app.use('/auth', authRoutes);
