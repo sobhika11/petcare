@@ -10,15 +10,21 @@ const Newsletter = () => {
         <div className="newsletter">
             <div>
                 <h4>PETCARE.GO</h4>
-                <p>crosscut road,Gandhipuram,Coimbatore -642002</p>
+                <p>crosscut road,Gandhipuram,<br/>                
+                Coimbatore -642002</p>
                 <p>Phone: +91 8438439860</p>
                 <p>Email:sobhika1105@gmail.com</p>
             </div>
             <div>
-                
+                <h4>NEWSLETTER</h4>
+                <p>Subscribe to our newsletter to get the latest updates and offers.</p>
+                <input type="email" placeholder="Enter your email" />
+                <button type="submit">Subscribe</button>
             </div>
             <div>
-
+                <h4>FOLLOW US</h4>
+                <p>Stay connected through our social media channels.</p>
+                <p> <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a> | <a href="#">LinkedIn</a></p>
             </div>
         </div>
     </p>

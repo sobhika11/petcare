@@ -1,8 +1,8 @@
 import React from 'react'
-
+import Newsletter from '../Components/Newsletter.jsx';
 const AboutUs = () => {
   return (
-    <div>AboutUs</div>
+    <Newsletter/>
   )
 }
 
