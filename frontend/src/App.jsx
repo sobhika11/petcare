@@ -2,10 +2,12 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import AboutUs from "./AboutUs";
 import Services from "./Services";
-
+import './index.css';
+import React from "react";  
+import Newsletter from "../Components/Newsletter.jsx";
 function App() {
   return (
-    <BrowserRouter>
+    <><BrowserRouter>
       <header>
         <h2 style={{ marginRight: "-110px" }}>𝐏𝐞𝐭𝐂𝐚𝐫𝐞.𝐠𝐨 🐾</h2>
         <nav className="navbar">
@@ -21,6 +23,8 @@ function App() {
         <Route path="/services" element={<Services />} />
       </Routes>
     </BrowserRouter>
+    <Newsletter/>
+    </>
   );
 }
 

@@ -134,3 +134,15 @@ p{
     color: white !important;
     border-radius: 8px;
 }
+.newsletter{
+    background-color: green;
+    text-align: left;
+    padding: 30px;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    font-weight: lighter;
+    justify-content: space-between;
+    align-items: center;
+    font-family: sans-serif;
+}
