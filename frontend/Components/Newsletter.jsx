@@ -3,14 +3,19 @@ import React from 'react'
 const Newsletter = () => {
   return (
     <>
-    <footer className="footer">
-  <div className="footer-container">
+    <div className="footer-div">
+        <h2>Welcome to PetCare.go, where we’re passionate about providing exceptional care for your beloved pets.Our clinic is dedicated to creating a safe, nurturing, and comfortable environment for animals of all kinds. With a team of highly qualified veterinary doctors, skilled technicians, and caring staff, we offer a comprehensive range of services, from routine check-ups and vaccinations to advanced medical treatments and emergency care.
 
+Thank you for choosing PetCare.go as your trusted partner in pet care. We look forward to welcoming you and your pets into our family!</h2>
+  
+    </div>
+    <footer className="footer">
+        <div className="footer-container">
     <div className="footer-col">
-      <h3>PETZ CREATION</h3>
+      <h3>PETCARE.GO</h3>
       <p>First Floor Khasra No. 47, Kundli, Sonipat - 131028</p>
       <p>📞 +91-9999971719</p>
-      <p>✉ info@petzcreation.com</p>
+      <p>✉ info@petcare.go</p>
     </div>
 
     <div className="footer-col">
@@ -34,10 +39,10 @@ const Newsletter = () => {
     </div>
 
     <div className="footer-col images">
-      <img src="/dog1.jpg" />
-      <img src="/dog2.jpg" />
-      <img src="/dog3.jpg" />
-      <img src="/dog4.jpg" />
+      <img src="../public/images/vet1.jpg" />
+      <img src="../public/images/vet2.jpeg" /><br/>
+      <img src="../public/images/vet3.jpeg" />
+      <img src="../public/images/vet4.webp" />
     </div>
 
   </div>
