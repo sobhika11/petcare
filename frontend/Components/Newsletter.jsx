@@ -12,10 +12,12 @@ Thank you for choosing PetCare.go as your trusted partner in pet care. We look f
     <footer className="footer">
         <div className="footer-container">
     <div className="footer-col">
-      <h3>PETCARE.GO</h3>
-      <p>First Floor Khasra No. 47, Kundli, Sonipat - 131028</p>
-      <p>📞 +91-9999971719</p>
-      <p>✉ info@petcare.go</p>
+        <ul>
+            <li><h3>PETCARE.GO</h3></li>
+            <li>First Floor Khasra No. 47, Kundli, Sonipat - 131028</li>
+            <li>📞 +91-9999971719</li>
+            <li>✉ info@petcare.go</li>
+        </ul>
     </div>
 
     <div className="footer-col">
