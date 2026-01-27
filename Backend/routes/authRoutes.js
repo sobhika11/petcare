@@ -33,7 +33,8 @@ router.post('/signup', async (req, res) => {
         email: user.email
       }
     })
-  } catch (err) {
+  } 
+  catch (err) {
     res.status(401).json({ message: 'Invalid Google token' })
   }
 })
