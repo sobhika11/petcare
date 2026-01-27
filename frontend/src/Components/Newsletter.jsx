@@ -3,12 +3,11 @@ import React from 'react'
 const Newsletter = () => {
   return (
     <>
-    <div className="footer-div">
-        <h2>Welcome to PetCare.go, where we’re passionate about providing exceptional care for your beloved pets.Our clinic is dedicated to creating a safe, nurturing, and comfortable environment for animals of all kinds. With a team of highly qualified veterinary doctors, skilled technicians, and caring staff, we offer a comprehensive range of services, from routine check-ups and vaccinations to advanced medical treatments and emergency care.
-
-Thank you for choosing PetCare.go as your trusted partner in pet care. We look forward to welcoming you and your pets into our family!</h2>
-  
-    </div>
+        <div className="footer-img-div">
+            <img src="../public/images/aboutus_img.jpeg" width="60%" height="500px"></img>
+            <p> Welcome to PetCare.go, where we’re passionate about providing exceptional care for your beloved pets.Our clinic is dedicated to creating a safe, nurturing, and comfortable environment for animals of all kinds. With a team of highly qualified veterinary doctors, skilled technicians, and caring staff, we offer a comprehensive range of services, from routine check-ups and vaccinations to advanced medical treatments and emergency care. 
+        Thank you for choosing PetCare.go as your trusted partner in pet care. We look forward to welcoming you and your pets into our family!</p>
+        </div>
     <footer className="footer">
         <div className="footer-container">
     <div className="footer-col">
