@@ -8,7 +8,7 @@ import Newsletter from "./Components/Newsletter.jsx";
 function App() {
   return (
     <><BrowserRouter>
-      <header>
+      <header className="header-div">
         <h2 style={{ marginRight: "-110px" }}>𝐏𝐞𝐭𝐂𝐚𝐫𝐞.𝐠𝐨 🐾</h2>
         <nav className="navbar">
           <Link to="/">Home</Link>

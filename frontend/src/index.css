@@ -13,16 +13,17 @@ p {
   line-height: 1.7;
 }
 header{
-    padding: 10px;
+    padding: 5px;
     background-color: aqua;
-    border-radius: 15px;
-    width: auto;
-    gap: 15px;
-    margin: auto;
-    margin-right: -10px;
+    border-radius: 10px;
+}
+.header-div{
+  display: flex;
+
 }
 nav {
   display: flex;
+  margin-left: 900px;;
   align-items: center;
   justify-content: space-between;
   padding: 20px 80px;
@@ -111,7 +112,6 @@ a{
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 3px;
 }
 
 .navbar a {
@@ -120,7 +120,18 @@ a{
   color: #222;
   font-weight: 500;
 }
-
+nav {
+  display: flex;
+  gap: 30px; /* proper spacing between links */
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo left, menu right */
+  padding: 20px;
+  background-color: aqua;
+  border-radius: 15px;
+}
 .navbar a:hover {
   color: green;
   gap: 10px;
