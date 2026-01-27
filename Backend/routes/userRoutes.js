@@ -10,7 +10,8 @@ router.post('/profile',async (req,res)=>{
         return res.status(404).json({message:"user not found"})
     return profile
     }
-    catch(err)
-        res.send(500).json({message:"server error"})
+    catch(err){
+        return res.send(500).json({message:"server error"})
+    }
 
 });
