@@ -4,7 +4,7 @@ import AboutUs from "./AboutUs";
 import Services from "./Services";
 import './index.css';
 import React from "react";  
-import Newsletter from "./Components/Newsletter.jsx";
+import Newsletter from "./Newsletter.jsx";
 function App() {
   return (
     <><BrowserRouter>

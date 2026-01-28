@@ -1,5 +1,5 @@
 import React from 'react'
-import Newsletter from './Components/Newsletter.jsx';
+import Newsletter from './Newsletter.jsx';
 const AboutUs = () => {
   return (
     <Newsletter/>
