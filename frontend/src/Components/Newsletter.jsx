@@ -46,10 +46,11 @@ const Newsletter = () => {
       <img src="../public/images/vet4.webp" />
     </div>
 
+
   </div>
 
   <div className="footer-bottom">
-    © 2022 petzcreation.com All Rights Reserved.
+    © 2022 petcarego.com All Rights Reserved.
   </div>
 </footer>
 
