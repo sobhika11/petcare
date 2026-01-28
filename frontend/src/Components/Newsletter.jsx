@@ -50,7 +50,7 @@ const Newsletter = () => {
   </div>
 
   <div className="footer-bottom">
-    © 2022 petcarego.com All Rights Reserved
+    ©  2026 petcarego.com All Rights Reserved
   </div>
 </footer>
 
