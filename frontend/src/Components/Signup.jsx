@@ -7,26 +7,26 @@ const Signup = () => {
   const [name,setName]= useState("");
   const [location,setLocation]= useState("");
   const navigate=useNavigate();
-//   const handlesubmit = async (e) => {
-//   e.preventDefault();
-//   try {
-//     const res = await fetch("http://localhost:5000/api/auth/signup", {
-//       method: "POST",
-//       headers: { "Content-Type": "application/json" },
-//       body: JSON.stringify({ email, password,name,location }),
-//     });
+  const handlesubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const res = await fetch("http://localhost:5000/api/auth/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password,name,location }),
+    });
 
-//     const data = await res.json();
-//     if (!res.ok) {
-//       alert(data.message);
-//     } else {
-//       console.log("Signup success:", data.user);
-//       navigate("/Home");
-//     }
-//   } catch (err) {
-//     console.error("Error:", err);
-//   }
-// };
+    const data = await res.json();
+    if (!res.ok) {
+      alert(data.message);
+    } else {
+      console.log("Signup success:", data.user);
+      navigate("/Home");
+    }
+  } catch (err) {
+    console.error("Error:", err);
+  }
+};
 
   return (
     <form onSubmit={handlesubmit}>
