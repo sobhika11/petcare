@@ -5,26 +5,26 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate=useNavigate();
-//   const handlesubmit = async (e) => {
-//   e.preventDefault();
-//   try {
-//     const res = await fetch("http://localhost:5000/api/auth/login", {
-//       method: "POST",
-//       headers: { "Content-Type": "application/json" },
-//       body: JSON.stringify({ email, password }),
-//     });
+  const handlesubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const res = await fetch("http://localhost:5000/api/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
 
-//     const data = await res.json();
-//     if (!res.ok) {
-//       alert(data.message);
-//     } else {
-//       console.log("Login success:", data.user);
-//       navigate("/Home");
-//     }
-//   } catch (err) {
-//     console.error("Error:", err);
-//   }
-// };
+    const data = await res.json();
+    if (!res.ok) {
+      alert(data.message);
+    } else {
+      console.log("Login success:", data.user);
+      navigate("/Home");
+    }
+  } catch (err) {
+    console.error("Error:", err);
+  }
+};
 
   return (
    <form onSubmit={handlesubmit}>
