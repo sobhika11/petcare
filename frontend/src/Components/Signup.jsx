@@ -58,7 +58,8 @@ const Signup = () => {
     value={location}
     onChange={(e)=>setLocation(e.target.value)}
     />
-      <button>Signup</button>
+      <button type="submit">Signup</button>
+
     </div>
     </div>
     </form>
