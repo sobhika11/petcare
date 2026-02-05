@@ -1,3 +1,6 @@
+import Services from "./Services";
+import { Link } from "react-router-dom";
+
 function Home() {
   return (
     <>
@@ -10,26 +13,13 @@ function Home() {
           </p>
 
           <p id="miss">
-            𝑨𝒕 𝒍𝒐𝒗𝒊𝒏𝒈 𝑷𝒆𝒕 𝒄𝒂𝒓𝒆 𝑷𝒂𝒓𝒕𝒏𝒆𝒓𝒔...
+            At Loving petcare ,we take care of your beloved tiny members💕
           </p>
 
           <br />
-          <a
-            href="login.html"
-            style={{
-              textDecoration: "none",
-              backgroundColor: "green",
-              borderRadius: "10px",
-              color: "white",
-              fontSize: "30px",
-              padding: "10px",
-            }}
-          >
-            Book an Appointment!!
-          </a>
         </div>
       </section>
-
+      <Services/>
       <p>We Will Take Care Of your Beloved Cuties❤</p>
 
       <section>
