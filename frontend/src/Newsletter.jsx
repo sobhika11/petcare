@@ -15,7 +15,7 @@ const Newsletter = () => {
             <li><h3>PETCARE.GO</h3></li>
             <li>First Floor Khasra No. 47, Kundli, Sonipat - 131028</li>
             <li>📞 +91-9999971719</li>
-            <li>✉ info@petcare.go</li>
+            <li>✉ sobhika1105@gmail.com</li>
         </ul>
     </div>
 
