@@ -2,28 +2,47 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import AboutUs from "./AboutUs";
 import Services from "./Services";
-import './index.css';
-import React from "react";  
-import Newsletter from "./Newsletter.jsx";
+import Login from "./Components/Login.jsx";
+import Signup from "./Components/Signup.jsx";
+import Profile from "./Profile";
+import "./index.css";
+
 function App() {
   return (
-    <><BrowserRouter>
-      <header className="header-div">
-        <h2 style={{ marginRight: "-110px" }}>𝐏𝐞𝐭𝐂𝐚𝐫𝐞.𝐠𝐨 🐾</h2>
-        <nav className="navbar">
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/services">Services</Link>
-        </nav>
+    <BrowserRouter>
+      <header className="navbar">
+        {/* LEFT */}
+        <div className="nav-left">
+          <div className="logo">Petcare.go</div>
+
+          <nav className="nav-links">
+            <Link to="/">Home</Link>
+            <Link to="/features">Features</Link>
+            <Link to="/pricing">Pricing</Link>
+            <Link to="/faqs">FAQs</Link>
+            <Link to="/about">About</Link>
+            
+          </nav>
+        </div>
+
+        {/* RIGHT */}
+        <div className="nav-right">
+
+          <Link to="/login" className="btn login-btn">Login</Link>
+          <Link to="/signup" className="btn login-btn">Sign-up</Link>
+        </div>
       </header>
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/profile" element={<Profile />} />
+
       </Routes>
     </BrowserRouter>
-    </>
   );
 }
 
