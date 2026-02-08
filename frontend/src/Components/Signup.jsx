@@ -10,18 +10,34 @@ const Signup = () => {
   const handlesubmit = async (e) => {
   e.preventDefault();
   try {
-    const res = await fetch("http://localhost:5000/api/auth/signup", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password,name,location }),
-    });
+    const res = await fetch("/api/auth/signup", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name,
+      email,
+      password,
+      location,
+    }),
+  });
 
-    const data = await res.json();
-    if (!res.ok) {
-      alert(data.message);
+    let data;
+    const contentType = res.headers.get("content-type") || "";
+    if (contentType.includes("application/json")) {
+      data = await res.json();
     } else {
+      const text = await res.text();
+      console.warn("Non-JSON signup response:", text);
+      data = text ? { message: text } : {};
+    }
+
+    if (!res.ok) {
+      alert(data.message || "Signup failed");
+    } else {
+      localStorage.setItem("token", data.token);
       console.log("Signup success:", data.user);
-      navigate("/Home");
+
+      navigate("/");
     }
   } catch (err) {
     console.error("Error:", err);
@@ -59,7 +75,7 @@ const Signup = () => {
     onChange={(e)=>setLocation(e.target.value)}
     />
       <button type="submit">Signup</button>
-
+     
     </div>
     </div>
     </form>

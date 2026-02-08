@@ -8,21 +8,32 @@ const Login = () => {
   const handlesubmit = async (e) => {
   e.preventDefault();
   try {
-    const res = await fetch("http://localhost:5000/api/auth/login", {
+    const res = await fetch("/api/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
     });
 
-    const data = await res.json();
-    if (!res.ok) {
-      alert(data.message);
+    let data;
+    const contentType = res.headers.get("content-type") || "";
+    if (contentType.includes("application/json")) {
+      data = await res.json();
     } else {
+      const text = await res.text();
+      console.warn("Non-JSON login response:", text);
+      data = text ? { message: text } : {};
+    }
+
+    if (!res.ok) {
+      alert(data.message || "Login failed");
+    } else {
+      localStorage.setItem("token", data.token);
       console.log("Login success:", data.user);
-      navigate("/Home");
+      navigate("/");
     }
   } catch (err) {
     console.error("Error:", err);
+    alert("Failed to connect to server");
   }
 };
 
@@ -45,8 +56,8 @@ const Login = () => {
         onChange={(e) => setPassword(e.target.value)}
       />
 
-      <button>Login</button>
-      <button>Login using google</button>
+      <button type="submit">Login</button>
+      <button type="button">Login using google</button>
     </div>
     </div>
    </form>
