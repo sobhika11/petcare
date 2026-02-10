@@ -140,11 +140,9 @@ a{
   {
     width: 500px;
     height: 500px;
-    /* background-image: url(Images/1433886.jpg); */
     background-image: url(/Images/serviclogo.jpeg);
     background-size: cover;
     border-radius: 10px;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
 
 }
 #miss
