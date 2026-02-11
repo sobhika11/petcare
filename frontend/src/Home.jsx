@@ -1,4 +1,5 @@
 import Services from "./Services";
+import Care from "./Care.jsx";
 import { Link } from "react-router-dom";
 
 function Home() {
@@ -20,22 +21,24 @@ function Home() {
         </div>
       </section>
       <Services/>
-      <p>We Will Take Care Of your Beloved Cuties❤</p>
+      <div className="footersec">
+        <div className="carediv">
+            
+        <Care img={"../public/Images/vet1.jpg"}
+              text={"PetCare helps users easily find and book nearby pet care services, including groomers and veterinarians, through a simple online platform. This makes pet care convenient and time-saving for owners."}
+        />
+        <Care 
+          img={"../public/Images/vet2.jpeg"}
+          text={"PetCare provides professional dog grooming services such as bathing, brushing, and nail trimming to keep dogs clean, healthy, and comfortable. Trained groomers ensure a safe and stress-free experience for every pet."}
+        />
+        <Care 
+          img={"../public/Images/vet3.jpeg"}
+          text={"PetCare offers gentle cat grooming services like de-shedding, nail trimming, and hygiene care. Our professionals ensure a calm environment to keep cats comfortable and healthy."}
+        />
 
-      <section>
-        <table cellPadding="10">
-          <tbody>
-            <tr>
-              <td><img src="/Images/main3.jpg" width="400" /></td>
-              <td><img src="/Images/main2.avif" width="400" /></td>
-            </tr>
-            <tr>
-              <td><img src="/Images/main4.avif" width="500" /></td>
-              <td><img src="/Images/main5.jpg" width="500" /></td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+
+        </div>
+      </div>
     </>
   );
 }
