@@ -1,5 +1,5 @@
 body {
-  background-color: #f9dfdf;
+  background-color: white;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -284,7 +284,7 @@ a{
   gap: 30px;
   justify-content: center;
   padding: 60px;
-  background-color: #f9dfdf;
+  background-color: white;
 }
 
 /* INFO BOX STYLE */
@@ -468,3 +468,52 @@ a{
 .Login .outerbox button:hover {
   background: blue;
 }
+
+.footersec{
+  background-color: white;
+}
+
+.carediv{
+  display: flex;
+  padding: 10px;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.care-container {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  padding: 80px 60px;
+  background: #d8cec4;   /* soft beige tone like example */
+  flex-wrap: wrap;
+}
+.care {
+  text-align: center;
+  max-width: 320px;
+}
+.care img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 22px;
+}
+.care img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 22px;
+}
+.care h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1a1a1a;
+}.care p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444;
+}
+
