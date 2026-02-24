@@ -1,17 +1,25 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { useState,useEffect } from "react";
 import Home from "./Home";
 import AboutUs from "./AboutUs";
 import Services from "./Services";
 import Login from "./Components/Login.jsx";
 import Signup from "./Components/Signup.jsx";
 import Profile from "./Profile";
+import DogGrooming from "./Components/DogGrooming.jsx";
 import "./index.css";
 
 function App() {
+  const [logged,setLogged]=useState(false);
+    useEffect(()=> {
+      const token=localStorage.getItem('token');
+      if(token){
+          setLogged(true)}
+    },[]);
   return (
     <BrowserRouter>
+    
       <header className="navbar">
-        {/* LEFT */}
         <div className="nav-left">
           <div className="logo">Petcare.go</div>
 
@@ -25,11 +33,24 @@ function App() {
           </nav>
         </div>
 
-        {/* RIGHT */}
         <div className="nav-right">
-
-          <Link to="/login" className="btn login-btn">Login</Link>
+        {
+          logged ? (
+          <>
+          <Link to="/profile" className="profile"><img href="../public/Images/p.png" className="profile"/></Link>
+            
+          </>):
+          (
+            <>
+            <Link to="/login" className="btn login-btn">Login</Link>
+            <Link to="/signup" className="btn login-btn">Sign-up</Link>
+            </>
+          )
+        }
+         <Link to="/login" className="btn login-btn">Login</Link>
           <Link to="/signup" className="btn login-btn">Sign-up</Link>
+          <Link to="/profile" className="profile"><img src="../public/Images/p.png" className="pimg"/></Link>
+           
         </div>
       </header>
 
@@ -40,7 +61,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/profile" element={<Profile />} />
-
+        <Route path="/dogGroom" element={<DogGrooming/>} />
       </Routes>
     </BrowserRouter>
   );
