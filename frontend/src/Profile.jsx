@@ -17,9 +17,10 @@ const Profile = () => {
       );
 
       const data = await res.json();
+      console.log(token);
       setUser(data);
     };
-
+    console.log(user);
     fetchProfile();
   }, []);
 
@@ -27,7 +28,7 @@ const Profile = () => {
 
   return (
     <div>
-      <h1>Profile</h1>
+      <h3>Profile</h3>
       <p>Name: {user.name}</p>
       <p>Email: {user.email}</p>
       <p>Location: {user.location}</p>
