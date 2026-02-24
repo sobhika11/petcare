@@ -5,21 +5,12 @@ import { Link } from "react-router-dom";
 function Home() {
   return (
     <>
-      <section className="sec">
-        <div id="dog"></div>
-
-        <div style={{ float: "left" }}>
-          <p style={{ fontSize: "50px", color: "black" }}>
-            Your pet DESERVES<br /> to be Pampered!🐾
-          </p>
-
-          <p id="miss">
-            At Loving petcare ,we take care of your beloved tiny members💕
-          </p>
-
-          <br />
-        </div>
-      </section>
+      <div className='dogGroom'>
+      <p className='para'>Welcome to petacre <br/></p>
+      <p className='para2'>
+          We take care of your <br/>BEST FRIEND
+      </p>
+      </div>
       <Services/>
       <div className="footersec">
         <div className="carediv">
