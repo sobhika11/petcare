@@ -1,5 +1,6 @@
-
+import { useNavigate }  from "react-router-dom";
 function Services() {
+  const Navigate=useNavigate();
   return (
     <div className="services-wrapper">
       
@@ -9,7 +10,7 @@ function Services() {
         </div>
         <h3>Pet Grooming</h3>
         <p>Book In-Home Cat and Dog Grooming Service</p>
-        <button>Book Appointment</button>
+        <button onClick={()=> Navigate("/dogGroom")}>Book Appointment</button>
       </div>
 
       <div className="service-card">
