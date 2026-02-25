@@ -7,6 +7,8 @@ import Login from "./Components/Login.jsx";
 import Signup from "./Components/Signup.jsx";
 import Profile from "./Profile";
 import DogGrooming from "./Components/DogGrooming.jsx";
+import { Popup } from "./Components/Popup.jsx";
+import Receipt from "./Components/Receipt.jsx";
 import "./index.css";
 
 function App() {
@@ -62,6 +64,8 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/dogGroom" element={<DogGrooming/>} />
+        <Route path="/Popup" element={<Popup/>} />
+        <Route path="/Receipt" element={<Receipt/>} />
       </Routes>
     </BrowserRouter>
   );
