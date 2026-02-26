@@ -4,9 +4,18 @@ import { useNavigate } from 'react-router-dom';
 function Components(props){
   const [trigger,setTrigger]=useState(false);
   const Navigate=useNavigate();
+  const [dates,setDate]=useState();
+  const generateDays=()=>{
+    const days=[];
+    for(let i=0;i<7;i++){
+      const date=new Date();
+      date.setDate(date.getDate()+i);
+      days.push(date);
+    }
+  return days;
+  }
   return(
     <>
-
    <div className='card'>
     <img src={props.img}/>
     <p>{props.text}</p>

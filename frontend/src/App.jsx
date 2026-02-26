@@ -7,7 +7,7 @@ import Login from "./Components/Login.jsx";
 import Signup from "./Components/Signup.jsx";
 import Profile from "./Profile";
 import DogGrooming from "./Components/DogGrooming.jsx";
-import { Popup } from "./Components/Popup.jsx";
+import Popup  from "./Components/Popup.jsx";
 import Receipt from "./Components/Receipt.jsx";
 import "./index.css";
 
