@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Signup = () => {
+const Signup = ({setLogged}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name,setName]= useState("");
@@ -30,13 +30,13 @@ const Signup = () => {
       console.warn("Non-JSON signup response:", text);
       data = text ? { message: text } : {};
     }
-
+    
     if (!res.ok) {
       alert(data.message || "Signup failed");
     } else {
+      setLogged(true);
       localStorage.setItem("token", data.token);
       console.log("Signup success:", data.user);
-
       navigate("/");
     }
   } catch (err) {
