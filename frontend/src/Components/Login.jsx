@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = ({setLogged}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate=useNavigate();
@@ -13,7 +13,7 @@ const Login = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
     });
-
+    
     let data;
     const contentType = res.headers.get("content-type") || "";
     if (contentType.includes("application/json")) {
@@ -23,10 +23,11 @@ const Login = () => {
       console.warn("Non-JSON login response:", text);
       data = text ? { message: text } : {};
     }
-
+    
     if (!res.ok) {
       alert(data.message || "Login failed");
     } else {
+      setLogged(true);
       localStorage.setItem("token", data.token);
       console.log("Login success:", data.user);
       navigate("/");
