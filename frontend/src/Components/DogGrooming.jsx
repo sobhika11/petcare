@@ -31,7 +31,7 @@ const DogGrooming = () => {
                   text="Expert trimming for a clean and stylish coat.
 Keeps your dog cool, neat, and comfortable.🐶"
           />
-      <Components img="../../public/Images/anidcare3.avif"
+      <Components img="../../public/Images/cat haircut.jpg"
                   text="Gentle grooming tailored for your feline friend.
 Soft, smooth, and perfectly shaped fur.🐱"
                   title="kitty cut"
@@ -43,7 +43,7 @@ Adds shine and fun to your dog’s coat.🐾"
           />
         
         <br/>
-        <Components img="../../public/Images/anidcare3.avif"
+        <Components img="../../public/Images/c1.jpg"
                   text="Carefully applied color for a graceful finish.
 Enhances your cat’s natural elegance.🍃"
                   title="kitty tint"
@@ -53,7 +53,7 @@ Enhances your cat’s natural elegance.🍃"
 A complete clean-up for a polished, adorable look.✨."
                   title="Pet Glow-Up"
           />
-          <Components img="../../public/Images/anidcare3.avif"
+          <Components img="../../public/Images/petcaaresitter.webp"
                   text="Loving supervision and attention throughout the day.
 Playtime, comfort, and proper care while you're away.💕"
                   title="Pet Caretaker"
