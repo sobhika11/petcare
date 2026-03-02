@@ -12,12 +12,10 @@ import Receipt from "./Components/Receipt.jsx";
 import "./index.css";
 
 function App() {
-  const [logged,setLogged]=useState(false);
-    useEffect(()=> {
-      const token=localStorage.getItem('token');
-      if(token){
-          setLogged(true)}
-    },[]);
+  const [logged, setLogged] = useState(
+  !!localStorage.getItem("token")
+);
+    
   return (
     <BrowserRouter>
     
@@ -39,20 +37,21 @@ function App() {
         {
           logged ? (
           <>
-          <Link to="/profile" className="profile"><img href="../public/Images/p.png" className="profile"/></Link>
+          <Link to="/profile" className="profile"><img src="../public/Images/p.png" className="pimg"/></Link>
             
           </>):
           (
             <>
             <Link to="/login" className="btn login-btn">Login</Link>
             <Link to="/signup" className="btn login-btn">Sign-up</Link>
+            
             </>
           )
         }
-         <Link to="/login" className="btn login-btn">Login</Link>
+         {/* <Link to="/login" className="btn login-btn">Login</Link>
           <Link to="/signup" className="btn login-btn">Sign-up</Link>
           <Link to="/profile" className="profile"><img src="../public/Images/p.png" className="pimg"/></Link>
-           
+            */}
         </div>
       </header>
 
@@ -60,9 +59,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/login" element={<Login setLogged={setLogged} />} />
+        <Route path="/signup" element={<Signup setLogged={setLogged}/>} />
+        <Route path="/profile" element={<Profile setLogged={setLogged} />} />
         <Route path="/dogGroom" element={<DogGrooming/>} />
         <Route path="/Popup" element={<Popup/>} />
         <Route path="/Receipt" element={<Receipt/>} />
