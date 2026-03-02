@@ -9,21 +9,9 @@ const appointmentSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  phone: {
-    type: String,
-    required: true
-  },
-  petName: {
-    type: String,
-    required: true
-  },
   petType: {
     type: String,
-    enum: ['Dog', 'Cat', 'Bird', 'Other'],
-    required: true
-  },
-  petAge: {
-    type: Number,
+    enum: ['Dog', 'Cat'],
     required: true
   },
   preferredDate: {
@@ -33,9 +21,6 @@ const appointmentSchema = new mongoose.Schema({
   preferredTime: {
     type: String,
     required: true
-  },
-  notes: {
-    type: String
   },
   userId: {
     type: mongoose.Schema.Types.ObjectId,
