@@ -539,7 +539,11 @@ a{
 
 .card p {
   margin: 30px 0;
-  font-size: 16px;
+  font-size: 18px;
+  /* font-family: 'Quicksand', sans-serif;
+   */
+   font-family: "Segoe UI", sans-serif;
+
   color:black;
 }
 
@@ -580,7 +584,6 @@ a{
 }
 
 /* profile */
-/* ===== PAGE BACKGROUND ===== */
 .profile-container {
   min-height: 90vh;
   display: flex;
@@ -590,7 +593,6 @@ a{
   font-family: Arial, sans-serif;
 }
 
-/* ===== PROFILE CARD ===== */
 .userprofile {
   background: #ffffff;
   width: 360px;
@@ -605,7 +607,6 @@ a{
   transform: translateY(-6px);
 }
 
-/* ===== PROFILE IMAGE ===== */
 .profile-avatar {
   width: 95px;
   height: 95px;
@@ -614,7 +615,6 @@ a{
   border: 4px solid #4CAF50;
 }
 
-/* ===== TITLE ===== */
 .userprofile h3 {
   font-size: 26px;
   margin-bottom: 20px;
@@ -650,85 +650,93 @@ a{
 }
 
 /* popup */
-.popup-overlay {
+.popup {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;  
-  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px); 
+  -webkit-backdrop-filter: blur(8px);
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
+  z-index: 1000; 
 }
 
+.popupp {
+  background:whitesmoke;
+  width: 90%;
+  max-width: 450px;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: fadeIn 0.3s ease-out;
+}
 
+.popup-header {
+  margin: 0;
+  color: black;
+  text-align: center;
+}
+.price-tag {
+  color: black;
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
 
-.popup {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: #3e2723; /* Deep Espresso */
-  background: #fffbf5; 
-  padding: 2.5rem;
-  border-radius: 20px;
-  border: 1px solid #d7ccc8;
-  box-shadow: 0 20px 40px rgba(62, 39, 35, 0.15); 
-  width: 100%;
-  max-width: 400px;
+.popup-body {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem; 
+  gap: 15px;
+  margin-top: 20px;
 }
 
-
-.popup label {
-  font-size: 1.1rem;
+label {
   font-weight: 600;
-  color: black; 
-  margin-bottom: -0.5rem;
-}
-
-.popup p {
   font-size: 0.9rem;
-  color: black;
-  margin: 0;
-  font-style: italic;
+  color:black;
 }
 
-.popup select {
-  background-color: #ffffff;
-  border: 2px solid #efebe9;
-  border-radius: 12px;
-  padding: 12px 15px;
+select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
   font-size: 1rem;
-  color: black;
-  
+  background-color: white;
 }
 
-.popup select:focus {
-  border-color: #8d6e63;
+select:focus {
+  border-color: #007bff;
 }
 
-.popup button {
-  background-color: #5d4037; 
-  color: #ffffff;
-  border: none;
-  padding: 14px;
-  border-radius: 12px;
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-.popup button:hover {
-  background-color: #3e2723; 
-}
-
-.popup-overlay {
-  background-color: rgba(62, 39, 35, 0.7); 
-}
 .actions {
   display: flex;
-  margin-left: -210px;
-  margin-top: 330px;
-  padding-right: 100px;
-  gap: 10px;
-  
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 25px;
 }
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+
+}
+
+button:first-child {
+  background: white;
+  color: black;
+}
+
+button:last-child {
+  background: #007bff;
+  color: black;
+}
+
