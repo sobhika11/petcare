@@ -545,7 +545,7 @@ a{
 
 .card button {
   padding: 10px 20px;
-  background-color:rgb(241, 164, 62);
+  background-color:orange;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -577,4 +577,158 @@ a{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* profile */
+/* ===== PAGE BACKGROUND ===== */
+.profile-container {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f6f9fc, #e8f1ff);
+  font-family: Arial, sans-serif;
+}
+
+/* ===== PROFILE CARD ===== */
+.userprofile {
+  background: #ffffff;
+  width: 360px;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.userprofile:hover {
+  transform: translateY(-6px);
+}
+
+/* ===== PROFILE IMAGE ===== */
+.profile-avatar {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 4px solid #4CAF50;
+}
+
+/* ===== TITLE ===== */
+.userprofile h3 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* ===== USER DETAILS ===== */
+.userprofile p {
+  font-size: 16px;
+  margin: 10px 0;
+  color: #444;
+  padding: 10px;
+  background: #f4f6fb;
+  border-radius: 10px;
+}
+
+/* ===== LOGOUT BUTTON ===== */
+.userprofile button {
+  margin-top: 22px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 10px;
+  background: #ff5c5c;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.userprofile button:hover {
+  background: #e04848;
+  transform: scale(1.05);
+}
+
+/* popup */
+.popup-overlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;  
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+
+
+.popup {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #3e2723; /* Deep Espresso */
+  background: #fffbf5; 
+  padding: 2.5rem;
+  border-radius: 20px;
+  border: 1px solid #d7ccc8;
+  box-shadow: 0 20px 40px rgba(62, 39, 35, 0.15); 
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; 
+}
+
+
+.popup label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: black; 
+  margin-bottom: -0.5rem;
+}
+
+.popup p {
+  font-size: 0.9rem;
+  color: black;
+  margin: 0;
+  font-style: italic;
+}
+
+.popup select {
+  background-color: #ffffff;
+  border: 2px solid #efebe9;
+  border-radius: 12px;
+  padding: 12px 15px;
+  font-size: 1rem;
+  color: black;
+  
+}
+
+.popup select:focus {
+  border-color: #8d6e63;
+}
+
+.popup button {
+  background-color: #5d4037; 
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.popup button:hover {
+  background-color: #3e2723; 
+}
+
+.popup-overlay {
+  background-color: rgba(62, 39, 35, 0.7); 
+}
+.actions {
+  display: flex;
+  margin-left: -210px;
+  margin-top: 330px;
+  padding-right: 100px;
+  gap: 10px;
+  
 }
