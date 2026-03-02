@@ -9,9 +9,13 @@ const userSchema=new mongoose.Schema({
             required:true,
             unique:true
         },
-        phone_number:{
+        password:{
             type:String,
             required:true
+        },
+        phone_number:{
+            type:String,
+            required:false
         },
         pets_name:{
             type:String,
@@ -19,7 +23,7 @@ const userSchema=new mongoose.Schema({
         },
         location:{
             type:String,
-            required:false
+            required:true
         }
     }); 
 module.exports=mongoose.model('User',userSchema);
