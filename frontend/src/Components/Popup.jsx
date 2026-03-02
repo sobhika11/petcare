@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useLocation } from "react-router-dom";
+
 const Popup = (props) => {
+// const service=props.servicename;
+const location = useLocation();
+const service = location.state?.servicename;
 const navigate=useNavigate();
 const [selectedDate,setSelectedDate]=useState("");
 const [selectedSlot, setSelectedSlot] = useState("");
@@ -12,6 +17,15 @@ for(let i=1;i<=7;i++){
   days.push(d);
 
 }
+const amt=new Map();
+amt.set("Paw trim",300);
+amt.set("kitty cut",400);
+amt.set("Paw tint",300);
+amt.set("kitty tint",500);
+amt.set("Pet Glow-Up",700);
+amt.set("Pet Care+",1200);
+const amount=amt.get(service);
+
 const[slot,setSlot]=useState([])
 useEffect(()=>{
     const fetchslot=async()=>{
@@ -40,11 +54,18 @@ useEffect(()=>{
   };
 
   return (
-    <div className='popup-overlay'>
-      <div className='popup'>
-        <h3>Book Appointment</h3>
+    <div className='popup'>
+      <div className='popupp'>
+        <h3 className="popup-header">Book Appointment</h3>
+        <br/>
+        <div >
+          <h4>Booking: {service}</h4>
+          <p className="price-tag">Amount to Pay: <strong>₹{amount}</strong></p>
+        </div>
         
-        <label>Select Date:</label>
+        <hr />
+        <div className='popup-body'>
+          <label>Select Date:</label>
         <select value={selectedDate} onChange={(e) => setSelectedDate(e.target.value)}>
           <option value="">Choose Date</option>
           {days.map((day, i) => (
@@ -71,6 +92,8 @@ useEffect(()=>{
             Confirm
           </button>
         </div>
+        </div>
+        
       </div>
     </div>
   );
