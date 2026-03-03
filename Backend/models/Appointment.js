@@ -18,6 +18,10 @@ const appointmentSchema = new mongoose.Schema({
     type: String, 
     required: true
   },
+  amount:{
+    type:Number,
+    required:true
+  },
   preferredTime: {
     type: String,
     required: true
