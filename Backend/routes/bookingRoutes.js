@@ -3,6 +3,8 @@ const express=require('express');
 const Appointment = require("../models/Appointment");
 const User = require("../models/user");
 const router=express.Router();
+const sendEmail = require("../services/mail");
+
 router.post("/book", async (req, res) => {
   try {
     const token = req.header("Authorization")?.split(" ")[1];
@@ -43,9 +45,32 @@ router.post("/book", async (req, res) => {
       message: "Appointment booked successfully"
       
     });
+    
   } catch (err) {
     console.error("booking error:", err);
     res.status(400).json({ message: err.message || "Booking failed" });
   }
 });
+
+router.post("/email",async(req,res)=>{
+  const { email, name, petType, preferredDate, preferredTime } = req.body;
+
+  try {
+     sendEmail(
+      user.email,
+      "Appointment Confirmed 🐶",
+      `Hi ${user.name},
+
+      Lovely! Your appointment is successfully booked.
+
+      Pet Type: ${petType}
+      Date: ${preferredDate}
+      Time: ${preferredTime}
+
+      Thank you for choosing our PetCare service.`
+        );
+    } catch (emailErr) {
+      console.log("Email failed:", emailErr.message);
+    }
+})
 module.exports=router;
