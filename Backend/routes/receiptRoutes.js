@@ -1,3 +1,5 @@
 const express=require('express');
 const router=express.Router();
-router.post
+const appointment=require('../models/Appointment');
+
+module.exports=router();

@@ -13,11 +13,11 @@ const sendEmail = async (to, subject, text) => {
       from: "sobhika1105@gmail.com",
       to: to,
       subject: subject,
-      text: text,
+      html: text,
       messageId: `<${Date.now()}@yourdomain.com>`, 
       headers: {
-        'X-Entity-Ref-ID': Date.now().toString() // Specific header to break threads
-      }
+        'X-Entity-Ref-ID': Date.now().toString() }
+
     };
 
     const info = await transporter.sendMail(mailOptions);

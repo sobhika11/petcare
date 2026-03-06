@@ -38,11 +38,8 @@ router.get('/receipt', async (req, res) => {
   try {
     const authHeader = req.header("Authorization");
     if (!authHeader) return res.status(401).json({ message: "No token provided" });
-
     const token = authHeader.split(" ")[1];
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
-    // Use decoded.id from the token to find only this user's appointments
     const history = await Appointment.find({ userId: decoded.id });
     res.status(200).json({ success: true, data: history });
   } catch (err) {
