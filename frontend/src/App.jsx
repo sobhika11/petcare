@@ -10,6 +10,8 @@ import DogGrooming from "./Components/DogGrooming.jsx";
 import Popup  from "./Components/Popup.jsx";
 import Loaction from './Components/Location.jsx';
 import Chatbot from './Components/Chatbot.jsx';
+import DogTraining from './Components/DogTraining.jsx';
+import TrainingHome from './Components/Training/TrainingHome.jsx';
 import "./index.css";
 
 
@@ -80,6 +82,8 @@ function App() {
         <Route path="/dogGroom" element={<DogGrooming/>} />
         <Route path="/Popup" element={<Popup/>} />
         <Route path ="/Location" element={<Loaction/>}/>
+        <Route path="/dog-training" element={<DogTraining/>} />
+        <Route path="/training" element={<TrainingHome/>} />
       </Routes>
 
       {/* Floating Chatbot Assistant */}

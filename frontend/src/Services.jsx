@@ -19,8 +19,8 @@ function Services() {
           🐕
         </div>
         <h3>Dog Training</h3>
-        <p>Join Our Dog Training Course</p>
-        <button>Book Appointment</button>
+        <p>Explore our Dog Training Tips & Tricks</p>
+        <button onClick={() => Navigate("/dog-training")}>Explore Tips</button>
       </div>
 
       <div className="service-card">
