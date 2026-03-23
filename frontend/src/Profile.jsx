@@ -104,29 +104,42 @@ const Profile = ({ setLogged }) => {
   const finished = appointments.filter(a => a.preferredDate < todayStr);
 
   return (
-    
-    <div className="profile-page-container">
-      <div className="profile-banner">
-        <div className="banner-text">
-          <h2>Welcome, {user.name}</h2>
-          <p>You have {upcoming.length} upcoming sessions.</p>
-        </div>
-        <div className="banner-right">
-          <button
-            className="logout-top-btn"
-            onClick={() => {
-              localStorage.clear();
-              setLogged(false);
-              navigate("/");
-            }}
-          >
-            Logout
-          </button>
-          <img src="/Images/miss.png" alt="Profile" className="banner-avatar" />
-        </div>
-      </div>
+    <div className="dashboard-layout">
+      {/* 1. Sidebar (Left) */}
+      <aside className="dashboard-sidebar">
+        <div className="sidebar-logo">🐾 PetCare App</div>
+        <ul className="sidebar-links">
+          <li className="active">Dashboard</li>
+          <li>My Pets</li>
+          <li>Appointments</li>
+          <li>Settings</li>
+        </ul>
+      </aside>
 
-      <div className="profile-vertical-layout">
+      {/* 2. Main Content Area */}
+      <div className="dashboard-main">
+        {/* Top Navbar */}
+        <nav className="dashboard-topnav">
+          <h2>Overview</h2>
+          <div className="topnav-profile">
+            <span style={{ fontWeight: 500 }}>{user.name}</span>
+            <img src="/Images/miss.png" alt="Profile" className="avatar-img" />
+            <button
+              className="logout-nav-btn"
+              onClick={() => {
+                localStorage.clear();
+                setLogged(false);
+                navigate("/");
+              }}
+            >
+              Logout
+            </button>
+          </div>
+        </nav>
+
+        {/* 3. Dashboard Content */}
+        <div className="dashboard-content">
+          <div className="profile-vertical-layout">
         {/* Weekly Schedule */}
         <div className="content-card">
           <h3>Weekly Schedule</h3>
@@ -211,6 +224,8 @@ const Profile = ({ setLogged }) => {
               <p className="no-apt">No past history found yet.</p>
             )}
           </div>
+        </div>
+      </div>
         </div>
       </div>
 
