@@ -37,38 +37,47 @@ const Location = () => {
 
   return (
     <div className="location-page">
-
-      <h2>Find Nearby Pet Clinics 🐾</h2>
-
-      <button onClick={getLocation}>
-        Use My Location
-      </button>
-
-      {location && (
-        <p>
-          Your Location: {location.lat}, {location.lon}
-        </p>
-      )}
-
-      <div className="clinic-list">
-
-        {clinics.map((clinic, index) => (
-          <div key={index} className="clinic-card">
-
-            <h3>{clinic.name}</h3>
-            <p>{clinic.address}</p>
-
-            {clinic.bookingAvailable ? (
-              <button>Book Appointment</button>
-            ) : (
-              <p>Call clinic for appointment</p>
-            )}
-
-          </div>
-        ))}
-
+      <div className="location-hero">
+        <h2>Find Nearby Pet Clinics 🏥</h2>
+        <p>Allow location access to instantly discover top-rated veterinarians near you.</p>
+        
+        <div className="location-actions">
+          <button className="btn-primary" onClick={getLocation}>
+            📍 Detect My Location
+          </button>
+          {location && (
+            <span className="location-badge">✓ Location active</span>
+          )}
+        </div>
       </div>
 
+      {clinics.length > 0 && (
+        <div className="clinic-results-section">
+          <h3 className="section-title">Available Clinics Near You</h3>
+          <div className="clinic-list">
+            {clinics.map((clinic, index) => (
+              <div key={index} className="clinic-card enhanced-card">
+                <div className="clinic-card-header">
+                  <h3>{clinic.name}</h3>
+                  <span className="status-badge {clinic.bookingAvailable ? 'open' : 'call'}">
+                    {clinic.bookingAvailable ? 'Accepting Bookings' : 'Call Only'}
+                  </span>
+                </div>
+                
+                <p className="clinic-address">📍 {clinic.address}</p>
+
+                <div className="clinic-actions">
+                  {clinic.bookingAvailable ? (
+                    <button className="btn-book">Book Appointment</button>
+                  ) : (
+                    <p className="call-fallback">📞 Call clinic for appointment</p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

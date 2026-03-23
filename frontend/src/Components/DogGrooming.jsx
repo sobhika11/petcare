@@ -6,15 +6,15 @@ const ServiceCard = ({ title, img, text }) => {
   const navigate = useNavigate();
   
   return (
-    <div className='card'>
-      <div className="card-image-wrapper">
+    <div className='grooming-card fade-in-up'>
+      <div className="grooming-image-wrapper">
         <img src={img} alt={title} />
       </div>
-      <div className="card-content">
-        <h3 className='title'>{title}</h3>
-        <p className='description'>{text}</p>
+      <div className="grooming-content">
+        <h3 className='grooming-title'>{title}</h3>
+        <p className='grooming-desc'>{text}</p>
         <button 
-          className="book-btn"
+          className="btn-book-grooming"
           onClick={() => navigate("/Popup", { state: { servicename: title } })}
         >
           Book Now
@@ -35,12 +35,12 @@ const DogGrooming = () => {
   ];
 
   return (
-    <section className='booking-container'>
-      <div className='header-section'>
-        <h1>Our Professional Grooming</h1>
-        <p>Give your furry friends the luxury treatment they deserve.</p>
+    <section className='grooming-container'>
+      <div className='grooming-header-section'>
+        <h1>Our Professional Grooming ✨</h1>
+        <p>Give your furry friends the luxury spa treatment they deserve.</p>
       </div>
-      <div className='services-grid'>
+      <div className='grooming-services-grid'>
         {services.map((service, index) => (
           <ServiceCard key={index} {...service} />
         ))}

@@ -100,13 +100,11 @@ const handleConfirm = async () => {
     <div className='popup'>
       <div className='popupp'>
         <h3 className="popup-header">Book Appointment</h3>
-        <br/>
-        <div >
+        <div className="popup-info">
           <h4>Booking: {service}</h4>
           <p className="price-tag">Amount to Pay: <strong>₹{amount}</strong></p>
         </div>
         
-        <hr />
         <div className='popup-body'>
           <label>Select Date:</label>
         <select value={selectedDate} onChange={(e) => setSelectedDate(e.target.value)}>
