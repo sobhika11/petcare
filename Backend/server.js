@@ -6,7 +6,8 @@ const authRoutes = require("./routes/authRoutes");
 const profileRoutes=require("./routes/userRoutes");
 const timeslotRoutes=require("./routes/timeslotRoutes");
 const Booking = require("./routes/bookingRoutes");
-
+const clinicRoutes = require("./routes/clinicRoutes");
+const chatRoutes = require("./routes/chatRoutes");
 const app = express();
 
 app.use(cors());
@@ -16,6 +17,8 @@ app.use("/api/auth", authRoutes);
 app.use("/api/auth",profileRoutes);
 app.use("/api/slot",timeslotRoutes)
 app.use("/api/apt", Booking);
+app.use("/api/clinics", clinicRoutes);
+app.use("/api/chat", chatRoutes);
 // test route
 const distPath = path.join(__dirname, '..', 'frontend', 'dist');
 const imagesPath = path.join(__dirname, '..', 'frontend', 'public', 'Images');
