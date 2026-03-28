@@ -1,8 +1,8 @@
 import Services from "./Services";
 import Care from "./Care.jsx";
-import { Link } from "react-router-dom";
-
+import Location from "./Components/Location.jsx";
 function Home() {
+  
   return (
     <>
       <div className='dogGroom'>
@@ -26,7 +26,6 @@ function Home() {
           img={"../public/Images/vet3.jpeg"}
           text={"PetCare offers gentle cat grooming services like de-shedding, nail trimming, and hygiene care. Our professionals ensure a calm environment to keep cats comfortable and healthy."}
         />
-
 
         </div>
       </div>

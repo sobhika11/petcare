@@ -1,68 +1,52 @@
-import React from 'react'
-import { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-function Components(props){
-  const [trigger,setTrigger]=useState(false);
-  const Navigate=useNavigate();
+
+// Renamed for clarity: ServiceCard instead of Components
+const ServiceCard = ({ title, img, text }) => {
+  const navigate = useNavigate();
   
-  return(
-    <>
-   <div className='card'>
-    <p className='title'>{props.title}</p>
-    <img src={props.img}/>
-    <p>{props.text}</p>
-    <button onClick={()=>{setTrigger(true)
-                          Navigate("/Popup",{state:{servicename:props.title}})
-    }}>Book Now</button>
-   </div>
-  </>
-  )
-}
-   
+  return (
+    <div className='card'>
+      <div className="card-image-wrapper">
+        <img src={img} alt={title} />
+      </div>
+      <div className="card-content">
+        <h3 className='title'>{title}</h3>
+        <p className='description'>{text}</p>
+        <button 
+          className="book-btn"
+          onClick={() => navigate("/Popup", { state: { servicename: title } })}
+        >
+          Book Now
+        </button>
+      </div>
+    </div>
+  );
+};
 
 const DogGrooming = () => {
+  const services = [
+    { title: "Paw trim", img: "/Images/dog hair cut_groom.webp", text: "Expert trimming for a clean and stylish coat. Keeps your dog cool and neat. 🐶" },
+    { title: "Kitty cut", img: "/Images/cat haircut.jpg", text: "Gentle grooming tailored for your feline friend. Soft and perfectly shaped fur. 🐱" },
+    { title: "Paw tint", img: "/Images/vet3.jpeg", text: "Safe, pet-friendly colors for a bold new look. Adds shine and fun. 🐾" },
+    { title: "Kitty tint", img: "/Images/c1.jpg", text: "Carefully applied color for a graceful finish. Enhances natural elegance. 🍃" },
+    { title: "Pet Glow-Up", img: "/Images/vet2.jpeg", text: "Includes a refreshing bath and gentle nail trimming for a polished look. ✨" },
+    { title: "Pet Caretaker", img: "/Images/petcaaresitter.webp", text: "Loving supervision and playtime while you're away. Comfort and care. 💕" },
+  ];
+
   return (
-    <>
-    
-      <div className='booking'>
-      <div className='booking-inner-div'>
-      <Components title="Paw trim"
-                  img="../../public/Images/dog hair cut_groom.webp" 
-                  text="Expert trimming for a clean and stylish coat.
-Keeps your dog cool, neat, and comfortable.🐶"
-          />
-      <Components img="../../public/Images/cat haircut.jpg"
-                  text="Gentle grooming tailored for your feline friend.
-Soft, smooth, and perfectly shaped fur.🐱"
-                  title="kitty cut"
-          />
-      <Components img="../../public/Images/vet3.jpeg"
-                  text="Safe, pet-friendly colors for a bold new look.
-Adds shine and fun to your dog’s coat.🐾"
-                  title="Paw tint"
-          />
-        
-        <br/>
-        <Components img="../../public/Images/c1.jpg"
-                  text="Carefully applied color for a graceful finish.
-Enhances your cat’s natural elegance.🍃"
-                  title="kitty tint"
-          />
-        <Components img="../../public/Images/vet2.jpeg"
-                  text="Includes a refreshing bath and gentle nail trimming.
-A complete clean-up for a polished, adorable look.✨."
-                  title="Pet Glow-Up"
-          />
-          <Components img="../../public/Images/petcaaresitter.webp"
-                  text="Loving supervision and attention throughout the day.
-Playtime, comfort, and proper care while you're away.💕"
-                  title="Pet Caretaker"
-          />
+    <section className='booking-container'>
+      <div className='header-section'>
+        <h1>Our Professional Grooming</h1>
+        <p>Give your furry friends the luxury treatment they deserve.</p>
       </div>
+      <div className='services-grid'>
+        {services.map((service, index) => (
+          <ServiceCard key={index} {...service} />
+        ))}
       </div>
+    </section>
+  );
+};
 
-    </>
-  )
-}
-
-export default DogGrooming
+export default DogGrooming;

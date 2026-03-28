@@ -8,14 +8,33 @@ import Signup from "./Components/Signup.jsx";
 import Profile from "./Profile";
 import DogGrooming from "./Components/DogGrooming.jsx";
 import Popup  from "./Components/Popup.jsx";
-import Receipt from "./Components/Receipt.jsx";
+import Loaction from './Components/Location.jsx';
+import Chatbot from './Components/Chatbot.jsx';
 import "./index.css";
 
+
 function App() {
-  const [logged, setLogged] = useState(
-  !!localStorage.getItem("token")
-);
-    
+  const [logged, setLogged] = useState(!!localStorage.getItem("token"));
+  const [isChatOpen, setIsChatOpen] = useState(false);
+   useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      try {
+        const decoded = jwtDecode(token);
+        // Check if token is expired
+        if (decoded.exp && decoded.exp * 1000 < Date.now()) {
+          console.log("Token expired");
+          localStorage.removeItem("token");
+          setLogged(false);
+        }
+      } catch (err) {
+        console.error("Error decoding token", err);
+        // leave token alone if unexpected error? we'll clear just in case
+        localStorage.removeItem("token");
+        setLogged(false);
+      }
+    }
+  }, []);
   return (
     <BrowserRouter>
     
@@ -48,10 +67,6 @@ function App() {
             </>
           )
         }
-         {/* <Link to="/login" className="btn login-btn">Login</Link>
-          <Link to="/signup" className="btn login-btn">Sign-up</Link>
-          <Link to="/profile" className="profile"><img src="../public/Images/p.png" className="pimg"/></Link>
-            */}
         </div>
       </header>
 
@@ -64,8 +79,33 @@ function App() {
         <Route path="/profile" element={<Profile setLogged={setLogged} />} />
         <Route path="/dogGroom" element={<DogGrooming/>} />
         <Route path="/Popup" element={<Popup/>} />
-        <Route path="/Receipt" element={<Receipt/>} />
+        <Route path ="/Location" element={<Loaction/>}/>
       </Routes>
+
+      {/* Floating Chatbot Assistant */}
+      <div style={{ position: 'fixed', bottom: '20px', right: '20px', zIndex: 1000, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '10px' }}>
+        {isChatOpen && (
+          <div style={{ animation: 'fadeIn 0.3s ease', transformOrigin: 'bottom right' }}>
+            <Chatbot />
+          </div>
+        )}
+        <button 
+          onClick={() => setIsChatOpen(!isChatOpen)}
+          style={{ 
+            width: '60px', height: '60px', borderRadius: '50%', 
+            backgroundColor: '#8b5e34', color: '#fff', border: 'none', 
+            boxShadow: '0 4px 12px rgba(0,0,0,0.15)', cursor: 'pointer', 
+            display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '28px',
+            transition: 'transform 0.2s ease'
+          }}
+          onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
+          onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+          aria-label="Toggle Chat"
+          title="Chat with PetCare Assistant"
+        >
+          🐾
+        </button>
+      </div>
     </BrowserRouter>
   );
 }

@@ -3,9 +3,13 @@ import { useNavigate } from 'react-router-dom'
 import { useLocation } from "react-router-dom";
 
 const Popup = (props) => {
-// const service=props.servicename;
 const location = useLocation();
 const service = location.state?.servicename;
+let petname = "";
+if (service === "Paw trim" || service === "Paw tint" || service === "Pet Glow-Up")
+  petname = "Dog";
+else
+  petname = "Cat";
 const navigate=useNavigate();
 const [selectedDate,setSelectedDate]=useState("");
 const [selectedSlot, setSelectedSlot] = useState("");
@@ -23,7 +27,7 @@ amt.set("kitty cut",400);
 amt.set("Paw tint",300);
 amt.set("kitty tint",500);
 amt.set("Pet Glow-Up",700);
-amt.set("Pet Care+",1200);
+amt.set("Pet Caretaker",1200);
 const amount=amt.get(service);
 
 const[slot,setSlot]=useState([])
@@ -41,17 +45,56 @@ useEffect(()=>{
     }
     if(slot.length===0)
         setSlot(["10.00","11.00"]);
-    fetchslot();2
+    fetchslot();
 },[selectedDate])
-  
 
-  const handleConfirm = () => {
-    props.setTrigger(false);
-    navigate("/Receipt", { 
-      replace: true, 
-      state: { date: selectedDate, slot: selectedSlot } 
+
+const handleConfirm = async () => {
+  try {
+    const token = localStorage.getItem("token");
+    const res = await fetch("http://localhost:5000/api/apt/book", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+      },
+      body: JSON.stringify({
+        petType: petname,
+        preferredDate: selectedDate,
+        preferredTime: selectedSlot,
+        amount: amount
+      })
     });
-  };
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      throw new Error(data.message || "Unknown error");
+    } else {
+      alert("Booked! See you soon💕");
+      navigate(-1);
+      
+      try {
+        await fetch("http://localhost:5000/api/apt/email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+          email: data.email, 
+          name: data.name,  
+          petType: petname, 
+          preferredDate: selectedDate,
+          preferredTime: selectedSlot
+        })
+        });
+      } catch (e) {
+        console.error("Silent email failure", e);
+      }
+    }
+  } catch (err) {
+    console.error("booking error", err);
+    alert("Booking failed, Try Again Later!");
+  }
+};
 
   return (
     <div className='popup'>
@@ -68,11 +111,15 @@ useEffect(()=>{
           <label>Select Date:</label>
         <select value={selectedDate} onChange={(e) => setSelectedDate(e.target.value)}>
           <option value="">Choose Date</option>
-          {days.map((day, i) => (
-            <option key={i} value={day.toDateString()}>
-              {day.toLocaleDateString("en-IN", { weekday: "short", day: "numeric", month: "short" })}
-            </option>
-          ))}
+          {days.map((day, i) => {
+            // store as ISO "YYYY-MM-DD" so profile can compare easily
+            const iso = day.toISOString().split('T')[0];
+            return (
+              <option key={i} value={iso}>
+                {day.toLocaleDateString("en-IN", { weekday: "short", day: "numeric", month: "short" })}
+              </option>
+            );
+          })}
         </select>
 
         <label>Select Time Slot:</label>
@@ -84,7 +131,7 @@ useEffect(()=>{
         </select>
 
         <div className="actions">
-          <button onClick={() => props.setTrigger(false)}>Cancel</button>
+          <button onClick={() => navigate(-1)}>Cancel</button>
           <button 
             disabled={!selectedDate || !selectedSlot} 
             onClick={handleConfirm}

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 const Signup = ({setLogged}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

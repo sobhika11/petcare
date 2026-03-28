@@ -1,4 +1,5 @@
 import { useNavigate }  from "react-router-dom";
+
 function Services() {
   const Navigate=useNavigate();
   return (
@@ -26,9 +27,11 @@ function Services() {
         <div className="icon-circle">
           🩺
         </div>
-        <h3>Vet on Call</h3>
-        <p>Expert Veterinary Service At Your Home and Online</p>
-        <p>Call 9093290766</p>
+        <h3>Vet Appointmnent</h3>
+        <p>Book Appointments to the nearby vet hospitals</p>
+        <button onClick={
+          () => Navigate("/Location")
+        }>Book Now</button>
       </div>
 
     </div>
