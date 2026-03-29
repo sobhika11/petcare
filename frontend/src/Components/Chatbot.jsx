@@ -1,6 +1,43 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './Chatbot.css';
 
+const StructuredMessage = ({ content }) => {
+  if (!content.includes('🐾 Summary:') && !content.includes('📌 Possible Reasons:') && !content.includes('💡 What You Can Do:') && !content.includes('🚨 When to See a Vet:')) {
+    return <div style={{ whiteSpace: 'pre-wrap' }}>{content}</div>;
+  }
+
+  const sections = content.split(/(?=🐾 Summary:|📌 Possible Reasons:|💡 What You Can Do:|🚨 When to See a Vet:)/g).filter(s => s.trim());
+
+  return (
+    <div className="structured-response">
+      {sections.map((sec, idx) => {
+        const lines = sec.trim().split('\n').filter(line => line.trim());
+        const title = lines[0];
+        const contentLines = lines.slice(1);
+
+        let colorClass = 'sec-default';
+        if (title.includes('Summary')) colorClass = 'sec-summary';
+        else if (title.includes('Possible Reasons')) colorClass = 'sec-reasons';
+        else if (title.includes('What You Can Do')) colorClass = 'sec-actions';
+        else if (title.includes('When to See a Vet')) colorClass = 'sec-warning';
+
+        return (
+          <div key={idx} className={`ai-section-card ${colorClass}`}>
+            <h4 className="ai-section-title">{title}</h4>
+            {contentLines.length > 0 && (
+              <ul className="ai-section-list">
+                {contentLines.map((item, i) => (
+                  <li key={i}>{item.replace(/^-\s*/, '').trim()}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
 const Chatbot = () => {
   const [messages, setMessages] = useState([
     { role: 'ai', content: 'Hello! 🐾 I am your PetCare AI Assistant. How can I help you and your furry friend today?' }
@@ -29,7 +66,10 @@ const Chatbot = () => {
     try {
       // Create a message history suitable for Groq API
       const apiMessages = [
-        { role: 'system', content: 'You are a helpful and friendly PetCare AI Assistant. Your goal is to help pet owners with advice about their pets, such as diet, behavior, general health questions, and training. You are polite, knowledgeable, and empathetic.' },
+        {
+          role: 'system',
+          content: 'You are a PetCare AI Assistant. You MUST format every response EXACTLY like this with no extra text:\n\n🐾 Summary:\n- [Short answer]\n\n📌 Possible Reasons:\n- [Point 1]\n- [Point 2]\n\n💡 What You Can Do:\n- [Action 1]\n- [Action 2]\n\n🚨 When to See a Vet:\n- [Warning signs]\n\nOmit sections if they truly do not apply, but ALWAYS use these exact headers including the emojis.'
+        },
         ...messages.map(msg => ({
           role: msg.role === 'ai' ? 'assistant' : 'user',
           content: msg.content
@@ -69,11 +109,11 @@ const Chatbot = () => {
         <span role="img" aria-label="paw">🐾</span>
         PetCare AI Assistant
       </div>
-      
+
       <div className="chatbot-messages">
         {messages.map((msg, index) => (
-          <div key={index} className={`chat-bubble ${msg.role}`}>
-            {msg.content}
+          <div key={index} className={`chat-bubble ${msg.role} ${msg.role === 'ai' && msg.content.includes('🐾') ? 'structured-bubble' : ''}`}>
+            {msg.role === 'ai' ? <StructuredMessage content={msg.content} /> : msg.content}
           </div>
         ))}
         {isLoading && (
@@ -93,8 +133,8 @@ const Chatbot = () => {
           onChange={(e) => setInputMessage(e.target.value)}
           disabled={isLoading}
         />
-        <button 
-          type="submit" 
+        <button
+          type="submit"
           className="chatbot-send-btn"
           disabled={!inputMessage.trim() || isLoading}
           aria-label="Send message"
