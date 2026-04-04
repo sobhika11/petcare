@@ -1,0 +1,423 @@
+.ht-page {
+  min-height: 100vh;
+  background: linear-gradient(150deg, #fdf8f3 0%, #f3e9de 100%);
+  padding: 0 0 80px;
+}
+
+/* ── Page header ─────────────────────────────────────────── */
+.ht-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 60px 40px 36px;
+  animation: ht-fadeDown 0.6s ease both;
+}
+
+.ht-eyebrow {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #8b5e34;
+  margin-bottom: 10px;
+}
+
+.ht-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: #3e2723;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.ht-subtitle {
+  font-size: 1rem;
+  color: #7b5e4a;
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+/* ── Add button ──────────────────────────────────────────── */
+.ht-add-btn {
+  flex-shrink: 0;
+  background: #3e2723;
+  color: #efd6a7;
+  border: none;
+  padding: 13px 26px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 14px rgba(62, 39, 35, 0.25);
+}
+
+.ht-add-btn:hover {
+  background: #5c4033;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(62, 39, 35, 0.35);
+}
+
+/* ── Alerts banner ───────────────────────────────────────── */
+.ht-alerts {
+  margin: 0 40px 24px;
+  background: linear-gradient(135deg, #fff7ed, #fef3c7);
+  border: 1.5px solid #fcd34d;
+  border-radius: 16px;
+  padding: 16px 22px;
+  animation: ht-fadeUp 0.5s ease both;
+}
+
+.ht-alerts strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #92400e;
+  margin-bottom: 10px;
+}
+
+.ht-alerts-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ht-alert-pill {
+  background: #fcd34d;
+  color: #78350f;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 50px;
+}
+
+/* ── Messages ────────────────────────────────────────────── */
+.ht-msg {
+  margin: 0 40px 20px;
+  padding: 13px 20px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  animation: ht-fadeUp 0.3s ease;
+}
+
+.ht-msg--success {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #6ee7b7;
+}
+
+.ht-msg--error {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+/* ── Form ────────────────────────────────────────────────── */
+.ht-form {
+  background: #fff;
+  border-radius: 22px;
+  border: 1.5px solid #efd6a7;
+  box-shadow: 0 8px 32px rgba(92, 61, 30, 0.1);
+  padding: 36px 40px;
+  margin: 0 40px 32px;
+  animation: ht-fadeUp 0.5s ease both;
+}
+
+.ht-form-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #3e2723;
+  margin-bottom: 24px;
+}
+
+.ht-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.ht-field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #5c3d1e;
+  letter-spacing: 0.5px;
+}
+
+.ht-field input,
+.ht-field textarea {
+  padding: 11px 14px;
+  border: 1.5px solid #e5d8c8;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #3e2723;
+  background: #fdfaf6;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  resize: vertical;
+}
+
+.ht-field input:focus,
+.ht-field textarea:focus {
+  border-color: #8b5e34;
+  box-shadow: 0 0 0 3px rgba(139, 94, 52, 0.12);
+}
+
+.ht-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+
+.ht-field + .ht-field,
+.ht-row,
+.ht-type-selector {
+  margin-top: 16px;
+}
+
+/* ── Type selector buttons ───────────────────────────────── */
+.ht-type-selector {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ht-type-btn {
+  padding: 9px 20px;
+  border: 1.5px solid #e5d8c8;
+  border-radius: 10px;
+  background: #fdfaf6;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #7b5e4a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ht-type-btn:hover {
+  border-color: #8b5e34;
+  color: #8b5e34;
+}
+
+.ht-type-btn--active {
+  background: #fdf3e7;
+}
+
+/* ── Submit button ───────────────────────────────────────── */
+.ht-submit-btn {
+  margin-top: 24px;
+  background: #3e2723;
+  color: #efd6a7;
+  border: none;
+  padding: 13px 30px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 14px rgba(62, 39, 35, 0.25);
+}
+
+.ht-submit-btn:hover:not(:disabled) {
+  background: #5c4033;
+  transform: translateY(-2px);
+}
+
+.ht-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ── Records section ─────────────────────────────────────── */
+.ht-records-section {
+  padding: 0 40px;
+}
+
+.ht-section-heading {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #3e2723;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ht-count {
+  background: #efd6a7;
+  color: #5c3d1e;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 50px;
+}
+
+/* ── Loading / empty states ──────────────────────────────── */
+.ht-loading {
+  text-align: center;
+  color: #7b5e4a;
+  font-size: 1rem;
+  padding: 50px 0;
+}
+
+.ht-empty {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fff;
+  border-radius: 20px;
+  border: 2px dashed #e5d8c8;
+}
+
+.ht-empty span {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.ht-empty p {
+  color: #7b5e4a;
+  font-size: 1rem;
+}
+
+/* ── Cards grid ──────────────────────────────────────────── */
+.ht-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 22px;
+}
+
+/* ── Record card ─────────────────────────────────────────── */
+.ht-rec-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 3px 14px rgba(92, 61, 30, 0.07);
+  border: 1.5px solid rgba(239, 214, 167, 0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: ht-fadeUp 0.5s ease both;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.ht-rec-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(92, 61, 30, 0.14);
+}
+
+.ht-rec-card--urgent {
+  border-color: #fcd34d;
+  background: linear-gradient(145deg, #fff, #fffbeb);
+}
+
+.ht-rec-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.ht-rec-type-badge {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+
+.ht-delete-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  opacity: 0.45;
+  transition: opacity 0.2s, transform 0.2s;
+  padding: 4px;
+}
+
+.ht-delete-btn:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.ht-rec-pet {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3e2723;
+  margin: 0;
+}
+
+.ht-rec-card p {
+  font-size: 0.88rem;
+  color: #5c4033;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.ht-rec-note {
+  font-style: italic;
+  color: #7b5e4a !important;
+}
+
+.ht-due-urgent {
+  color: #b45309 !important;
+  font-weight: 600;
+}
+
+.ht-days-pill {
+  display: inline-block;
+  margin-left: 8px;
+  background: #fcd34d;
+  color: #78350f;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 50px;
+}
+
+.ht-rec-ts {
+  font-size: 0.76rem !important;
+  color: #b0967e !important;
+  margin-top: 6px !important;
+}
+
+/* ── Animations ──────────────────────────────────────────── */
+@keyframes ht-fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ht-fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 700px) {
+  .ht-header,
+  .ht-alerts,
+  .ht-msg,
+  .ht-form,
+  .ht-records-section {
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .ht-header {
+    padding-top: 40px;
+  }
+
+  .ht-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ht-row {
+    flex-direction: column;
+  }
+}
